@@ -1,0 +1,97 @@
+/* CSS resets */
+
+ * {
+    margin: 0;
+    padding: 0;
+ }
+
+ /* respect user font size */
+
+ html {
+    font-size: 100%;
+ }
+
+/* General CSS */
+
+body{
+    background-color: #a52a2a;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 1.5rem;
+    line-height: 1.5;
+}
+
+header {
+    padding: 3rem;
+    margin-bottom: 3rem;
+    background-color: #2a739b;
+}
+
+header h1{
+    font-size: 3rem;
+}
+
+nav {
+    position: absolute;
+    bottom: 60rem;
+}
+
+nav a{
+    text-decoration: none;
+    color: rgb(190, 113, 184);
+}
+
+p {
+    text-align: center;
+}
+
+h2 {
+    text-align: center;
+}
+
+h3 {
+    text-align: center;
+}
+
+main {
+    max-width: 60rem;
+    margin: 2rem auto;
+}
+
+.about-section, .Portfolio-section, .contact-section {
+    margin-bottom: 5rem;
+}
+
+
+.Portfolio-item img {
+    max-width: 100%;
+    margin: 0 auto;
+    display: block;
+    border-radius: .5rem;
+}
+
+.Portfolio-item h3 {
+    margin: 1rem 0;
+}
+
+.Portfolio-item p {
+    font-size: 1.2rem;
+}
+
+.Portfolio-item {
+    margin-bottom: 5rem;
+    background-color: #ffebcd;
+    padding: 4rem;
+    text-align: center;
+    box-shadow: 10px 10px 5px rgb(0, 0, 0);
+}
+
+.about-section{
+    background-color: azure;
+}
+
+
+footer {
+    background-color: rgb(3, 22, 16);
+    color: aliceblue;
+    text-align: right;
+}
