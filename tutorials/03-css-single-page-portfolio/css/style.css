@@ -28,16 +28,25 @@ header {
 
 header h1{
     font-size: 3rem;
+    text-decoration: underline;
+    text-decoration-style: wavy;
+    text-decoration-color: #b7fa70;
 }
 
 nav {
     position: absolute;
-    bottom: 60rem;
+    top: 6.5rem;
+    right: 76rem;
 }
 
 nav a{
     text-decoration: none;
     color: rgb(190, 113, 184);
+    display: inline-block;
+}
+
+nav a:hover {
+    color: #b7fa70;
 }
 
 p {
