@@ -1,4 +1,16 @@
-/* CSS resets */
+/*~~~~~~~~~~~~~~~~~~~~~~~ color palette */
+
+:root {
+--bg-color-1: #a52a2a;
+--bg-color-2: #2a739b;
+--font: #111;
+--accent-1: #be71b8;
+--accent-2: #b7fa70;
+--dark: #222;
+}
+
+
+/*~~~~~~~~~~~~~~~~~~~~~~~ CSS resets */
 
  * {
     margin: 0;
@@ -11,42 +23,65 @@
     font-size: 100%;
  }
 
-/* General CSS */
+/*~~~~~~~~~~~~~~~~~~~~~ General CSS */
 
 body{
-    background-color: #a52a2a;
+    background-color: var(--bg-color-1);
+    color: var(--font);
     font-family: 'Courier New', Courier, monospace;
     font-size: 1.5rem;
     line-height: 1.5;
+    text-align: center;
+}
+
+@media (max-width: 700px){
+    body {
+            font-size: 1.3rem
+    }
 }
 
 header {
     padding: 3rem;
     margin-bottom: 3rem;
-    background-color: #2a739b;
+    background-color: var(--bg-color-2);
+    text-align: left;
+}
+
+@media (max-width: 700px){
+    header {
+        padding-left: 2rem;
+    }
 }
 
 header h1{
     font-size: 3rem;
     text-decoration: underline;
     text-decoration-style: wavy;
-    text-decoration-color: #b7fa70;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    text-decoration-color: var(--accent-2);
 }
 
 nav {
     position: absolute;
-    top: 6.5rem;
-    right: 76rem;
+    right: 75.2rem;
+    top: 7rem;
 }
 
 nav a{
     text-decoration: none;
-    color: rgb(190, 113, 184);
+    color: var(--accent-1);
     display: inline-block;
 }
 
 nav a:hover {
-    color: #b7fa70;
+    color: var(--accent-2);
+    transform: scale(1.3);
+}
+
+@media (max-width: 750px) {
+    nav a {
+        margin: 0 .5rem;
+    }
 }
 
 p {
@@ -64,6 +99,18 @@ h3 {
 main {
     max-width: 60rem;
     margin: 2rem auto;
+}
+
+@media (max-width: 850px) {
+    main {
+        margin: 2rem;
+    }
+}
+
+@media (max-width: 600px){
+    main {
+        margin: 1rem;
+    }
 }
 
 .about-section, .Portfolio-section, .contact-section {
@@ -90,8 +137,19 @@ main {
     margin-bottom: 5rem;
     background-color: #ffebcd;
     padding: 4rem;
-    text-align: center;
     box-shadow: 10px 10px 5px rgb(0, 0, 0);
+}
+
+@media (max-width: 800px){
+    .Portfolio-item{
+        padding: 3rem;
+    }
+}
+
+@media (max-width: 600px){
+    .Portfolio-item{
+        padding: 2rem;
+    }
 }
 
 .about-section{
@@ -100,7 +158,14 @@ main {
 
 
 footer {
-    background-color: rgb(3, 22, 16);
+    background-color: var(--accent-2);
     color: aliceblue;
     text-align: right;
+}
+
+
+/* style classes */
+
+.a-1 {
+    color: darkolivegreen;
 }
