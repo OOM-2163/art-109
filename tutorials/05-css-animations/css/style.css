@@ -28,7 +28,6 @@ body{
     border-radius: 20px;
     margin: 50px auto;
     transition: all 1s;
-    animation: opacity 5s infinite alternate;
  }
 
  .square:hover{
@@ -73,6 +72,16 @@ body{
    100% {width: 80vw;}
  }
 
- .loading:hover{
+.small {
+    display: inline-block;
+    transition: all .5s; 
+}
+
+ .small:hover{
    transform: scale(0.5);
+ }
+
+ .fade {
+   display: inline-block;
+   animation: opacity 5s infinite alternate;
  }
