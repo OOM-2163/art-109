@@ -29,7 +29,7 @@ function windowResized(){
 
  function drawThing(_x, _y){
     strokeWeight(0);
-    fill(random(200,255), random(200,255), random(200,255));
+    fill(250, 213, 165);
     ellipse(_x, _y, 30, 30);
  }
 
