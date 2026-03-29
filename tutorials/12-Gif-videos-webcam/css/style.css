@@ -1,0 +1,19 @@
+
+.rolling-turtle {
+    position: absolute;
+    top: 10px;
+    left: 30px;
+}
+
+.tet {
+    position: relative;
+    margin: 50px auto;
+    max-width: 400px;
+    font-size: 3rem;
+}
+
+.Dtut {
+    position: absolute;
+    top: 40px;
+    left: 50px;
+}
