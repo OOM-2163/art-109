@@ -29,3 +29,84 @@ img {
   max-width: 100%;
   display: block;
 }
+
+
+body {
+  background-color: burlywood;
+}
+
+img {
+  width: 15rem;
+}
+
+.hidden {
+  display: none;
+}
+
+#img1 {
+  position: absolute;
+  left: 20rem;
+}
+
+#img2 {
+  position: absolute;
+  left: 35rem;
+}
+
+#img3 {
+  position: absolute;
+  top: 20rem;
+  left: 20rem;
+}
+
+#img4 {
+  position: absolute;
+  top: 20rem;
+  left: 35rem;
+}
+
+#img5 {
+  position: absolute;
+  top: 36.5rem;
+  left: 20rem;
+}
+
+#img6 {
+  position: absolute;
+  top: 36.5rem;
+  left: 35rem;
+}
+
+#pop1 {
+  position: absolute;
+  left: 20rem;
+}
+
+#pop2 {
+  position: absolute;
+  left: 35rem;
+}
+
+#pop3 {
+  position: absolute;
+  top: 23rem;
+  left: 20rem;
+}
+
+#pop4 {
+  position: absolute;
+  width: 100rem;
+  height: 100rem;
+}
+
+#pop5 {
+  position: absolute;
+  width: 100rem;
+  height: 100rem;
+}
+
+#pop6 {
+  position: absolute;
+  left: 35rem;
+  top: 36.5rem;
+}
