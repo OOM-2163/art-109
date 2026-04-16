@@ -1,0 +1,387 @@
+/*========================================
+  WATER BOTTLE OPENING TUTORIAL STYLESHEET
+  A Retro 2003 Throwback Educational Page
+  ========================================*/
+
+/* UNIVERSAL STYLES - Applied to all elements */
+* {
+    margin: 0;           /* Remove default margins */
+    padding: 0;          /* Remove default padding */
+    box-sizing: border-box; /* Include padding/border in width calculations */
+}
+
+/* BODY STYLES - Main page container */
+body {
+    font-family: 'Comic Sans MS', 'Papyrus', cursive, Arial; /* Retro fonts for nostalgic feel */
+    background: linear-gradient(45deg, #1a0033 0%, #003300 25%, #1a0033 50%, #003300 75%, #1a0033 100%);
+    background-size: 200% 200%; /* Background is 2x larger to enable animation movement */
+    animation: gradientShift 15s ease infinite; /* Continuously animate the gradient */
+    color: #00ff00; /* Bright green text (neon effect) */
+    overflow-x: hidden; /* Hide horizontal scrollbar */
+    position: relative; /* Establish positioning context for children */
+}
+
+/* GRADIENT ANIMATION - Makes the background smoothly shift colors */
+@keyframes gradientShift {
+    0% { background-position: 0% 50%; }     /* Start position */
+    50% { background-position: 100% 50%; }  /* Middle position */
+    100% { background-position: 0% 50%; }   /* Return to start (loop) */
+}
+
+/* BACKGROUND GRID - Creates a retro grid pattern overlay */
+.background-grid {
+    position: fixed;   /* Stay in place when scrolling */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* Two perpendicular linear gradients create a grid pattern */
+    background-image: 
+        linear-gradient(90deg, rgba(0, 255, 0, 0.1) 1px, transparent 1px),
+        linear-gradient(rgba(0, 255, 0, 0.1) 1px, transparent 1px);
+    background-size: 40px 40px; /* Grid cell size: 40x40 pixels */
+    pointer-events: none; /* Allow clicks to pass through to elements below */
+    z-index: 0; /* Behind all other elements */
+}
+
+/* HEADER - Top section with title and tagline */
+.header {
+    text-align: center; /* Center all text horizontally */
+    padding: 40px 20px; /* Space inside the header */
+    position: relative;
+    z-index: 1; /* Appear above background grid */
+    /* Multiple text-shadows create a glowing 3D effect */
+    text-shadow: 3px 3px 0px #ff00ff, 6px 6px 0px #00ffff;
+    animation: bounce 3s ease-in-out infinite; /* Bounce effect repeats forever */
+}
+
+/* BOUNCE ANIMATION - Makes header bounce up and down */
+@keyframes bounce {
+    0%, 100% { transform: translateY(0); }     /* Start and end positions */
+    50% { transform: translateY(-20px); }      /* Highest point of bounce */
+}
+
+/* MAIN TITLE - Large heading text */
+.title-main {
+    font-size: 3.5em;           /* Large size for visual impact */
+    font-weight: bold;
+    color: #00ff00;             /* Bright green neon color */
+    letter-spacing: 3px;        /* Extra space between letters */
+    margin-bottom: 10px;
+    text-transform: uppercase;  /* Convert all text to CAPITALS */
+    transform: skewX(-5deg);    /* Slight diagonal slant for retro style */
+}
+
+/* TAGLINE - Subtitle text below main title */
+.tagline {
+    font-size: 1.8em;
+    color: #ff00ff;             /* Bright magenta color */
+    font-style: italic;         /* Slanted text */
+    animation: rotate 10s linear infinite; /* Continuous rotation (slower speed) */
+}
+
+/* ROTATE ANIMATION - Spins the tagline around continuously */
+@keyframes rotate {
+    0% { transform: rotateZ(0deg); }    /* Start position */
+    100% { transform: rotateZ(360deg); } /* Full 360-degree rotation */
+}
+
+/* NAVIGATION - Menu bar with links to page sections */
+.nav-retro {
+    display: flex;              /* Use flexbox for horizontal layout */
+    justify-content: center;    /* Center items horizontally */
+    gap: 20px;                  /* Space between navigation items */
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.7); /* Semi-transparent black background */
+    border-top: 4px solid #ff00ff;      /* Purple border on top */
+    border-bottom: 4px solid #00ff00;   /* Green border on bottom */
+    flex-wrap: wrap;            /* Allow items to wrap to next line if needed */
+    position: relative;
+    z-index: 1;
+}
+
+/* NAVIGATION LINKS - Individual menu items */
+.nav-link {
+    color: #00ff00;
+    text-decoration: none;      /* Remove underline from links */
+    font-size: 1.3em;
+    font-weight: bold;
+    padding: 10px 20px;         /* Space inside the button */
+    border: 2px solid #ff00ff;
+    /* Gradient background transitions from dark purple to dark green */
+    background: linear-gradient(135deg, #1a0033, #003300);
+    transition: all 0.3s;       /* Smoothly animate changes on hover */
+    cursor: pointer;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    box-shadow: 0 0 10px #ff00ff; /* Glowing effect around link */
+}
+
+/* HOVER STATE - What happens when you move mouse over a nav link */
+.nav-link:hover {
+    background: linear-gradient(135deg, #ff00ff, #00ff00); /* Gradient becomes bright */
+    color: #000000; /* Text turns black */
+    transform: scale(1.2) rotate(-5deg); /* Grow and tilt */
+    box-shadow: 0 0 20px #00ff00, 0 0 30px #ff00ff; /* Stronger glow */
+}
+
+/* ALTERNATING NAV COLORS - Odd and even items have different hover colors */
+.nav-link:nth-child(odd):hover {
+    box-shadow: 0 0 20px #ff0000, 0 0 30px #ff00ff; /* Red glow for odd items */
+}
+
+.nav-link:nth-child(even):hover {
+    box-shadow: 0 0 20px #0000ff, 0 0 30px #00ff00; /* Blue glow for even items */
+}
+
+/* MAIN CONTENT AREA - Container for all tutorial sections */
+.main-content {
+    position: relative;
+    z-index: 1;
+    display: flex;              /* Use flexbox layout */
+    flex-direction: column;     /* Stack items vertically */
+    gap: 30px;                  /* Space between sections */
+    padding: 40px 20px;
+    max-width: 1200px;          /* Limit width for better readability */
+    margin: 0 auto;             /* Center on page */
+}
+
+/* SECTION STYLES - Individual tutorial sections */
+section {
+    animation: slideIn 0.8s ease-out; /* Fade in and slide up when page loads */
+}
+
+/* SLIDE IN ANIMATION - Creates entrance effect for sections */
+@keyframes slideIn {
+    from {
+        opacity: 0;                      /* Start invisible */
+        transform: translateY(50px) rotateZ(5deg); /* Start lower and tilted */
+    }
+    to {
+        opacity: 1;                      /* Become visible */
+        transform: translateY(0) rotateZ(0deg);    /* Move to normal position */
+    }
+}
+
+/* CARD STYLES - Content containers */
+.card {
+    padding: 40px;              /* Internal spacing */
+    border-radius: 20px;        /* Rounded corners */
+    border: 5px solid;          /* Thick border (color varies by card type) */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5); /* Drop shadow for depth */
+    transition: all 0.3s;       /* Smooth animation on interaction */
+    transform: skewY(-3deg);    /* Slightly tilted for retro style */
+}
+
+/* PURPLE CARD - Used for odd sections */
+.purple-card {
+    background: linear-gradient(135deg, #4d0099, #1a0033); /* Purple gradient */
+    border-color: #ff00ff; /* Magenta border */
+    color: #00ff00; /* Green text */
+    box-shadow: 0 0 20px #ff00ff, inset 0 0 20px rgba(255, 0, 255, 0.2); /* Glow + inner shadow */
+}
+
+/* GREEN CARD - Used for even sections */
+.green-card {
+    background: linear-gradient(135deg, #003300, #006600); /* Green gradient */
+    border-color: #00ff00; /* Green border */
+    color: #ff00ff; /* Magenta text */
+    box-shadow: 0 0 20px #00ff00, inset 0 0 20px rgba(0, 255, 0, 0.2); /* Glow + inner shadow */
+}
+
+/* CARD HOVER - Interactive effect when mouse hovers over card */
+.card:hover {
+    transform: skewY(-3deg) scale(1.05) rotate(2deg); /* Grow and rotate slightly */
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.7); /* Larger shadow for lifting effect */
+}
+
+/* CARD HEADING - Titles within cards */
+.card h2 {
+    font-size: 2em;             /* Large text */
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-shadow: 2px 2px 0px #000; /* Dark shadow for 3D effect */
+}
+
+/* CARD PARAGRAPH - Body text within cards */
+.card p {
+    font-size: 1.2em;
+    line-height: 1.8;           /* Extra line spacing for readability */
+    margin-bottom: 20px;
+}
+
+/* BUTTON STYLES - Clickable action buttons */
+.btn-retro {
+    padding: 15px 40px;         /* Internal spacing */
+    font-size: 1.1em;
+    font-weight: bold;
+    border: 3px solid;          /* Thick border */
+    border-radius: 10px;        /* Rounded corners */
+    cursor: pointer;
+    transition: all 0.3s;       /* Smooth animation on interaction */
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-family: 'Comic Sans MS', cursive; /* Retro font */
+}
+
+/* PURPLE CARD BUTTONS - Bright green buttons on purple cards */
+.purple-card .btn-retro {
+    background: #00ff00;        /* Bright green background */
+    color: #1a0033;             /* Dark purple text */
+    border-color: #00ff00;
+    box-shadow: 0 0 10px #00ff00; /* Green glow */
+}
+
+/* GREEN CARD BUTTONS - Bright magenta buttons on green cards */
+.green-card .btn-retro {
+    background: #ff00ff;        /* Bright magenta background */
+    color: #003300;             /* Dark green text */
+    border-color: #ff00ff;
+    box-shadow: 0 0 10px #ff00ff; /* Magenta glow */
+}
+
+/* BUTTON HOVER - Interactive feedback when hovering over buttons */
+.btn-retro:hover {
+    transform: translate(-5px, -5px) scale(1.1); /* Lift up and grow */
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3); /* Larger shadow for depth */
+}
+
+/* BUTTON ACTIVE - Feedback when clicking button */
+.btn-retro:active {
+    transform: translate(-2px, -2px); /* Smaller lift effect while pressed */
+}
+
+/* FLOATING SHAPES - Decorative background elements */
+.floating-shapes {
+    position: fixed;            /* Stay in place while scrolling */
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    pointer-events: none;       /* Don't interfere with clicking elements */
+    z-index: 0;                 /* Behind all other content */
+}
+
+/* INDIVIDUAL SHAPE STYLING */
+.shape {
+    position: absolute;         /* Position freely within container */
+    font-size: 4em;             /* Large decorative text */
+    opacity: 0.2;               /* Subtle (mostly transparent) */
+    animation: float 6s ease-in-out infinite; /* Floating motion */
+}
+
+/* SHAPE 1 - First decorative element (magenta circle) */
+.shape-1 {
+    color: #ff00ff;
+    top: 10%;
+    right: 5%;
+    /* Combine two animations: floating AND spinning */
+    animation: float 6s ease-in-out infinite, spin 4s linear infinite;
+}
+
+/* SHAPE 2 - Second decorative element (green star) */
+.shape-2 {
+    color: #00ff00;
+    bottom: 20%;
+    left: 10%;
+    animation: float 8s ease-in-out infinite 1s; /* Start after 1 second delay */
+}
+
+/* SHAPE 3 - Third decorative element (magenta square) */
+.shape-3 {
+    color: #ff00ff;
+    top: 50%;
+    right: 15%;
+    animation: float 7s ease-in-out infinite 2s; /* Start after 2 second delay */
+}
+
+/* SHAPE 4 - Fourth decorative element (green triangle) */
+.shape-4 {
+    color: #00ff00;
+    bottom: 30%;
+    right: 20%;
+    animation: float 9s ease-in-out infinite 1.5s; /* Start after 1.5 second delay */
+}
+
+/* FLOAT ANIMATION - Up and down motion */
+@keyframes float {
+    0%, 100% { transform: translateY(0px); }     /* Bottom position */
+    50% { transform: translateY(-50px); }        /* Top position (50px higher) */
+}
+
+/* SPIN ANIMATION - Rotating motion */
+@keyframes spin {
+    0% { transform: rotateZ(0deg); }     /* Starting rotation */
+    100% { transform: rotateZ(360deg); } /* Full rotation */
+}
+
+/* BLINK EFFECT - Makes text flash on and off */
+.blink {
+    animation: blink 1s infinite; /* Flash every 1 second */
+    color: #ff00ff; /* Magenta color when visible */
+}
+
+/* BLINK ANIMATION - Toggle visibility */
+@keyframes blink {
+    0%, 50% { opacity: 1; }     /* Fully visible for first half of cycle */
+    51%, 100% { opacity: 0; }   /* Invisible for second half of cycle */
+}
+
+/* FOOTER - Bottom section of page */
+.footer {
+    text-align: center;         /* Center all text */
+    padding: 30px 20px;         /* Space inside footer */
+    position: relative;
+    z-index: 1;                 /* Above background grid */
+    border-top: 3px dashed #00ff00; /* Green dashed line separator */
+    color: #00ff00;             /* Green text */
+    font-size: 1.1em;
+    background: rgba(0, 0, 0, 0.5); /* Semi-transparent black background */
+    text-shadow: 2px 2px 0px #ff00ff; /* Magenta text shadow */
+}
+
+/* RESPONSIVE DESIGN - Styles for smaller screens (tablets/phones) */
+@media (max-width: 768px) {
+    /* Reduce title size on small screens */
+    .title-main {
+        font-size: 2em;
+    }
+
+    /* Reduce tagline size on small screens */
+    .tagline {
+        font-size: 1.2em;
+    }
+
+    /* Stack navigation items vertically instead of horizontally */
+    .nav-retro {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    /* Make navigation links full width on mobile */
+    .nav-link {
+        width: 100%;
+        text-align: center;
+    }
+
+    /* Reduce padding in cards for smaller screens */
+    .card {
+        padding: 20px;
+    }
+
+    /* Reduce heading size in cards */
+    .card h2 {
+        font-size: 1.5em;
+    }
+
+    /* Reduce body text size in cards */
+    .card p {
+        font-size: 1em;
+    }
+
+    /* Make floating shapes smaller on mobile */
+    .shape {
+        font-size: 2em;
+    }
+}
