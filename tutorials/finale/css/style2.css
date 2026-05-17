@@ -1,9 +1,9 @@
 /*~~~~~~~~~~~~~~~~~~~~~~~ color palette */
 
 :root {
---bg-color-1: #a52a2a;
+--bg-color-1: rgb(178, 153, 120);
 --bg-color-2: #2a739b;
---font: #f9f9f7;
+--font: #000000;
 --accent-1: #be71b8;
 --accent-2: #b7fa70;
 --dark: #222;
@@ -12,6 +12,10 @@
 
 /*~~~~~~~~~~~~~~~~~~~~~~~ CSS resets */
 
+@font-face {
+    font-family: 'Old';
+    src: url(TranscityDEMO.otf);
+}
 
 /* Change box-sizing default to border-box */
 *,
@@ -51,12 +55,12 @@ body {
     font-size: 1.5rem;
     line-height: 1.5;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-
+    font-family: "old";
 }
 
 header {
-    padding: 5rem 2rem;
-    margin-bottom: 7rem;
+    padding: 2rem 2rem;
+    margin-bottom: 2rem;
 }
 
 header h1 {
@@ -150,7 +154,7 @@ main {
 }
 
 .about-content h2, .Portfolio-content h2, .contact-content h2, .project-content h2 {
-margin: 2rem 0;
+margin: 1rem 0;
 }
 
 .project-content {

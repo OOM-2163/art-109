@@ -1,7 +1,7 @@
 /*~~~~~~~~~~~~~~~~~~~~~~~ color palette */
 
 :root {
---bg-color-1: #777777;
+--bg-color-1: #bebebe;
 --bg-color-2: #2a739b;
 --font: #000000;
 --accent-1: #be71b8;
@@ -12,6 +12,10 @@
 
 /*~~~~~~~~~~~~~~~~~~~~~~~ CSS resets */
 
+@font-face {
+    font-family: 'rock';
+    src: url(rock.ttf);
+}
 
 /* Change box-sizing default to border-box */
 *,
@@ -46,11 +50,12 @@ html {
 }
 
 body {
+    background-image: url(../../images/stone.png);
     background-color: var(--bg-color-1);
     color: var(--font);
     font-size: 1.5rem;
     line-height: 1.5;
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-family: "rock";
 
 }
 
@@ -160,8 +165,8 @@ margin: 2rem 0;
 .project-content img {
     margin: 0 auto;
     padding: 2rem;
-    width: 2200px;
-    height: 2220px;
+    width: 600px;
+    height: 600px;
 }
 
 .project-content p {
